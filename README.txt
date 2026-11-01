@@ -1,19 +1,26 @@
-MOLSOM EDUCATIONAL INSTITUTION WEBSITE
+MOLSOM EDUCATIONAL INSTITUTION WEBSITE — UPLOAD PACKAGE
 
-Files
-- index.html: responsive, single-page website with CSS and JavaScript included.
+Contact details configured:
+- Email: sristimolsom1234@gmail.com
+- Phone: 8837332788
+- Location: Udaipur, Gomati, Tripura
 
-Preview
-1. Extract the ZIP.
-2. Open index.html in Chrome, Firefox, or another browser.
+PACKAGE CONTENTS
+- index.html — complete responsive website (HTML, CSS and JavaScript in one file)
+- README.txt — upload and setup instructions
 
-Publish
-- Upload index.html to your web host's public web folder, or deploy the folder with Vercel, Netlify, or GitHub Pages.
+LOCAL PREVIEW
+1. Extract this ZIP archive.
+2. Open index.html in a web browser.
 
-Before publishing
-1. In index.html, replace "your-email@example.com" with the institution's official email in the INSTITUTION_EMAIL constant.
-2. Update the placeholder email, address and office hours in the contact section.
-3. Confirm program names, claims, and contact details are accurate.
-4. The enquiry form opens the visitor's email application; it does not store submissions. For online storage/admin dashboard, connect a backend such as Firebase.
+UPLOAD TO HOSTING
+- Upload the contents of the extracted folder to your hosting provider's website root/public folder.
+- The main page is named index.html.
+- For GitHub Pages, upload index.html to the root of your repository and enable Pages in repository Settings.
+- For Vercel, import the folder/repository as a static site; no build command is required and the output directory is the project root.
 
-No external libraries or paid assets are required.
+CONTACT FORM
+The enquiry form opens the visitor's email app and prepares an email to sristimolsom1234@gmail.com.
+It does not save submissions to a database. A backend (for example Firebase) is needed for stored enquiries and an admin dashboard.
+
+Review all institution details and program information before publishing.

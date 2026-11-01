@@ -170,7 +170,7 @@
     <section id="contact"><div class="container">
       <div class="section-head"><span class="kicker">GET IN TOUCH</span><h2>We’d love to hear from you</h2><p>Ask about programs, admission, class schedules or learning support.</p></div>
       <div class="contact-grid">
-        <div class="contact-info"><h3>Connect with Molsom</h3><p>Send an enquiry and our team can follow up with information about learning opportunities.</p><div class="contact-item">✉️ &nbsp; Email: <span>Update with your official email</span></div><div class="contact-item">📍 &nbsp; Location: <span>Update with your institution address</span></div><div class="contact-item">🕘 &nbsp; Office hours: <span>Update your working hours</span></div></div>
+        <div class="contact-info"><h3>Connect with Molsom</h3><p>Send an enquiry and our team can follow up with information about learning opportunities.</p><div class="contact-item">✉️ &nbsp; Email: <a href="mailto:sristimolsom1234@gmail.com">sristimolsom1234@gmail.com</a></div><div class="contact-item">📍 &nbsp; Location: <span>Udaipur, Gomati, Tripura</span></div><div class="contact-item">☎️ &nbsp; Phone: <a href="tel:+918837327788">8837332788</a></div></div>
         <form id="enquiryForm">
           <div class="field"><label for="name">Full name *</label><input id="name" name="name" required placeholder="Your name"></div>
           <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" required type="tel" placeholder="Your phone number"></div>
@@ -199,7 +199,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Replace this with the institution's real contact email before publishing.
-    const INSTITUTION_EMAIL = 'your-email@example.com';
+    const INSTITUTION_EMAIL = 'sristimolsom1234@gmail.com';
     document.getElementById('enquiryForm').addEventListener('submit', event => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
@@ -207,7 +207,7 @@
       const body = encodeURIComponent(
         `Name: ${data.get('name')}\\nPhone: ${data.get('phone')}\\nEmail: ${data.get('email')}\\nProgram: ${data.get('program')}\\n\\nMessage:\\n${data.get('message')}`
       );
-      if (INSTITUTION_EMAIL === 'your-email@example.com') {
+      if (!INSTITUTION_EMAIL || INSTITUTION_EMAIL === 'your-email@example.com') {
         const toast = document.getElementById('toast');
         toast.textContent = 'Please update INSTITUTION_EMAIL in index.html with your official email before using the enquiry form.';
         toast.style.display = 'block';
