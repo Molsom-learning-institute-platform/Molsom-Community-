@@ -1,0 +1,1 @@
+export default function App(){return <h1>Molsom Education Platform</h1>}

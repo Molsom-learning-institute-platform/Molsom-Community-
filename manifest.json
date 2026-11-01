@@ -1,0 +1,6 @@
+{
+  "name": "Molsom Education Platform",
+  "short_name": "Molsom",
+  "display": "standalone",
+  "start_url": "/"
+}

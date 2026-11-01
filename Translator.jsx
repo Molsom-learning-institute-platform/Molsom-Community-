@@ -1,0 +1,1 @@
+export default function Translator(){return <div>Molsom-English Translator</div>}
