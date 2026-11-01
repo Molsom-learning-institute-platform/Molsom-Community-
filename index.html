@@ -1,1 +1,221 @@
-<!DOCTYPE html><html><head><title>Molsom Learning Institute</title><link rel="stylesheet" href="css/style.css"></head><body><nav><h1>Molsom Learning Institute</h1></nav><header class="hero"><h2>Professional Learning Platform</h2><p>Courses, Login, Dashboard & Management</p></header><section><h3>Courses</h3><div class="card">Web Development</div><div class="card">Data Science</div></section><footer>© Molsom LMS</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Molsom Educational Institution — learn languages, build skills and grow with confidence.">
+  <meta name="theme-color" content="#102a43">
+  <title>Molsom Educational Institution | Learn. Grow. Lead.</title>
+  <style>
+    :root {
+      --navy:#102a43; --blue:#1769aa; --teal:#17a398; --gold:#f4b942;
+      --ink:#243b53; --muted:#627d98; --paper:#f5f8fc; --white:#fff;
+      --line:#d9e2ec; --shadow:0 18px 45px rgba(16,42,67,.10);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{background:var(--navy);color:#d9e8f5;font-size:.88rem;padding:8px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #e8eef4}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);letter-spacing:-.4px}
+    .logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--teal),var(--blue));display:grid;place-items:center;color:#fff;font-size:1.25rem;font-weight:900;box-shadow:0 8px 18px #1769aa33}
+    .brand small{display:block;font-size:.68rem;letter-spacing:1.5px;color:var(--muted);font-weight:700}
+    .navlinks{display:flex;align-items:center;gap:26px;font-size:.94rem;font-weight:650}
+    .navlinks a:hover{color:var(--teal)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 19px;background:var(--teal);color:#fff;font-weight:750;cursor:pointer;transition:.2s;box-shadow:0 8px 18px #17a39830}
+    .btn:hover{transform:translateY(-2px);background:#118b82}
+    .btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--line);box-shadow:none}
+    .menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy);cursor:pointer}
+    .hero{background:radial-gradient(circle at 85% 20%,#2aa99c55,transparent 28%),linear-gradient(125deg,#102a43 0%,#164e73 62%,#1769aa 100%);color:#fff;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;padding:82px 0 88px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#ffffff18;border:1px solid #ffffff35;padding:7px 12px;border-radius:99px;font-size:.82rem;font-weight:700;color:#d6fff8}
+    h1{font-size:clamp(2.5rem,5vw,4.55rem);line-height:1.08;letter-spacing:-2px;margin:20px 0}
+    .hero p{font-size:1.12rem;color:#dceaf5;max-width:580px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero .btn.secondary{background:#ffffff12;border-color:#ffffff55;color:#fff}
+    .hero-note{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:#d7e8f5;font-size:.9rem}
+    .hero-note strong{display:block;color:#fff;font-size:1.2rem}
+    .visual{position:relative;min-height:390px;display:grid;place-items:center}
+    .visual-card{width:min(100%,440px);background:#ffffff12;border:1px solid #ffffff35;border-radius:28px;padding:22px;box-shadow:0 25px 70px #071c2d55;transform:rotate(2deg)}
+    .visual-top{display:flex;justify-content:space-between;align-items:center;color:#e4f5ff;font-size:.85rem}
+    .learning-art{height:230px;margin:18px 0;border-radius:20px;background:linear-gradient(135deg,#e8f7f4,#c8e6f2);display:grid;place-items:center;position:relative;overflow:hidden}
+    .book{width:160px;height:112px;background:#fff;border-radius:10px 18px 18px 10px;box-shadow:12px 14px 0 #1769aa35;transform:rotate(-9deg);display:flex;overflow:hidden}
+    .book:before,.book:after{content:"";width:50%;border:2px solid #d6e5ed;border-top:0;border-bottom:0}
+    .book:after{background:repeating-linear-gradient(to bottom,transparent 0 13px,#b8d4df 14px 15px)}
+    .floating{position:absolute;background:#fff;color:var(--navy);padding:11px 15px;border-radius:14px;box-shadow:var(--shadow);font-size:.82rem;font-weight:750}
+    .float-one{top:28px;left:8px}.float-two{right:8px;bottom:26px}
+    .progress{height:8px;background:#ffffff30;border-radius:99px;overflow:hidden;margin-top:10px}.progress span{display:block;width:76%;height:100%;background:var(--gold);border-radius:99px}
+    section{padding:78px 0}
+    .section-head{text-align:center;max-width:690px;margin:0 auto 42px}
+    .kicker{color:var(--teal);font-size:.78rem;text-transform:uppercase;letter-spacing:1.7px;font-weight:850}
+    h2{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15;color:var(--navy);letter-spacing:-1px;margin:10px 0 14px}
+    .section-head p{color:var(--muted);margin:0}
+    .stats{padding:28px 0;background:#f3f8fb}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+    .stat strong{display:block;font-size:2rem;color:var(--navy);line-height:1.2}.stat span{color:var(--muted);font-size:.9rem}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .about-panel{background:linear-gradient(145deg,#e5f5f2,#eaf2fb);padding:34px;border-radius:26px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote-mark{font-size:4rem;line-height:1;color:var(--teal)}
+    .about-panel blockquote{margin:0;font-size:1.45rem;font-weight:750;color:var(--navy);line-height:1.35}
+    .about-panel small{color:var(--muted);font-weight:700}
+    .check-list{display:grid;gap:13px;margin:25px 0}
+    .check{display:flex;gap:11px;align-items:flex-start}.check b{color:var(--teal);font-size:1.1rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .course-card{border:1px solid var(--line);border-radius:20px;padding:25px;background:#fff;transition:.25s}
+    .course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#b9d8e5}
+    .course-icon{width:52px;height:52px;border-radius:16px;background:#e6f6f3;display:grid;place-items:center;font-size:1.55rem;margin-bottom:18px}
+    .course-card h3{color:var(--navy);margin:0 0 8px}.course-card p{color:var(--muted);font-size:.94rem;margin:0 0 18px}
+    .course-meta{display:flex;justify-content:space-between;border-top:1px solid #edf1f5;padding-top:14px;font-size:.82rem;color:var(--muted)}
+    .feature-band{background:var(--paper)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+    .feature{text-align:center;padding:24px}.feature .course-icon{margin:0 auto 15px}
+    .feature h3{color:var(--navy);margin:0 0 7px}.feature p{color:var(--muted);margin:0;font-size:.94rem}
+    .cta{background:linear-gradient(120deg,#102a43,#1769aa);color:#fff;border-radius:28px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta h2{color:#fff;margin:0 0 8px}.cta p{color:#d7e8f5;margin:0}
+    .cta .btn{background:var(--gold);color:#253746;box-shadow:none}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+    .contact-info{background:var(--navy);color:#fff;border-radius:22px;padding:30px}
+    .contact-info h3{margin-top:0;font-size:1.4rem}.contact-info p{color:#d6e5f1}
+    .contact-item{padding:13px 0;border-top:1px solid #ffffff25;color:#e5f1f8}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:grid;gap:6px}.field.full{grid-column:1/-1}
+    label{font-size:.86rem;font-weight:700;color:var(--navy)}
+    input,select,textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #17a39820}
+    textarea{min-height:110px;resize:vertical}
+    footer{background:#0b2033;color:#d6e5f1;padding:35px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer small{color:#9fb3c8}
+    .toast{position:fixed;bottom:22px;right:22px;background:#102a43;color:#fff;padding:14px 18px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:50;max-width:330px}
+    @media(max-width:850px){.navlinks{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:20px 25px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}.hero-grid{grid-template-columns:1fr;padding:65px 0}.visual{min-height:330px}.about-grid,.contact-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.container{width:min(100% - 30px,1160px)}.topbar .container{font-size:.78rem}.hero-grid{padding:52px 0}.visual{min-height:290px}.visual-card{padding:15px}.learning-art{height:180px}.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:25px}section{padding:58px 0}.cards,.features{grid-template-columns:1fr}.cta{padding:30px;display:block}.cta .btn{margin-top:20px}form{grid-template-columns:1fr}.field.full{grid-column:auto}.about-panel{min-height:270px;padding:25px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>📚 A place to learn, grow and achieve</span><span>Admissions & enquiries: <a href="#contact">Contact our team</a></span></div></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Molsom Educational Institution home"><span class="logo">M</span><span>MOLSOM<small>EDUCATIONAL INSTITUTION</small></span></a>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#courses">Programs</a><a href="#why-us">Why Molsom</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#contact">Enquire now ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ EDUCATION • LANGUAGE • OPPORTUNITY</span>
+          <h1>Learn today.<br><span style="color:#75e0d2">Lead tomorrow.</span></h1>
+          <p>Build confidence, strengthen your skills and open new opportunities through meaningful learning at Molsom Educational Institution.</p>
+          <div class="hero-actions"><a class="btn" href="#courses">Explore programs →</a><a class="btn secondary" href="#about">Discover Molsom</a></div>
+          <div class="hero-note"><div><strong>Student-first</strong>Supportive learning</div><div><strong>Practical</strong>Skills for real life</div><div><strong>Inclusive</strong>Learning for all</div></div>
+        </div>
+        <div class="visual" aria-label="Learning illustration">
+          <div class="floating float-one">✍️ Learn a new skill</div>
+          <div class="visual-card">
+            <div class="visual-top"><b>YOUR LEARNING JOURNEY</b><span>✦ MOLSOM</span></div>
+            <div class="learning-art"><div class="book"></div><div class="floating" style="left:18px;bottom:18px">Knowledge opens doors</div><div class="floating" style="right:18px;top:18px">✦ Keep growing</div></div>
+            <div style="display:flex;justify-content:space-between;color:#fff;font-size:.9rem"><b>Learning progress</b><b>76%</b></div><div class="progress"><span></span></div>
+          </div>
+          <div class="floating float-two">🌱 Your future starts here</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats"><div class="container stats-grid">
+      <div class="stat"><strong>Learn</strong><span>At your own pace</span></div><div class="stat"><strong>Grow</strong><span>With expert guidance</span></div><div class="stat"><strong>Practice</strong><span>Build real confidence</span></div><div class="stat"><strong>Achieve</strong><span>Reach your goals</span></div>
+    </div></div>
+
+    <section id="about"><div class="container about-grid">
+      <div class="about-panel"><div class="quote-mark">“</div><blockquote>Education is more than learning facts. It is discovering what you can become.</blockquote><small>THE MOLSOM LEARNING PHILOSOPHY</small></div>
+      <div><span class="kicker">WELCOME TO MOLSOM</span><h2>A learning community built around your potential.</h2><p style="color:var(--muted)">Molsom Educational Institution is a learning platform designed to encourage curiosity, communication and lifelong development. We aim to make learning approachable, practical and relevant to every learner.</p>
+        <div class="check-list"><div class="check"><b>✓</b><span><strong>Student-centred learning</strong><br><small style="color:var(--muted)">A supportive environment where every learner matters.</small></span></div><div class="check"><b>✓</b><span><strong>Skills with purpose</strong><br><small style="color:var(--muted)">Build knowledge you can use in everyday life.</small></span></div><div class="check"><b>✓</b><span><strong>Culture and communication</strong><br><small style="color:var(--muted)">Value language, identity and shared understanding.</small></span></div></div>
+        <a class="btn" href="#contact">Talk to us →</a>
+      </div>
+    </div></section>
+
+    <section id="courses" style="background:#fbfdff"><div class="container">
+      <div class="section-head"><span class="kicker">LEARNING PROGRAMS</span><h2>Find a program that moves you forward</h2><p>Explore learning areas and contact us for current batches, schedules and admission details.</p></div>
+      <div class="cards">
+        <article class="course-card"><div class="course-icon">🌐</div><h3>Language Learning</h3><p>Develop speaking, reading, writing and listening skills through structured practice.</p><div class="course-meta"><span>Communication</span><span>Beginner–Advanced</span></div></article>
+        <article class="course-card"><div class="course-icon">📖</div><h3>Molsom Language & Culture</h3><p>Explore Molsom vocabulary, expressions, reading and cultural knowledge.</p><div class="course-meta"><span>Heritage learning</span><span>All levels</span></div></article>
+        <article class="course-card"><div class="course-icon">💻</div><h3>Digital Skills</h3><p>Build confidence with computers, online tools and essential digital literacy.</p><div class="course-meta"><span>Technology</span><span>Practical learning</span></div></article>
+        <article class="course-card"><div class="course-icon">🎯</div><h3>Personal Development</h3><p>Strengthen confidence, communication, presentation and independent learning.</p><div class="course-meta"><span>Life skills</span><span>All learners</span></div></article>
+        <article class="course-card"><div class="course-icon">🧑‍🏫</div><h3>Student Support</h3><p>Get guidance, learning resources and a clear path toward your study goals.</p><div class="course-meta"><span>Guidance</span><span>By enquiry</span></div></article>
+        <article class="course-card"><div class="course-icon">📝</div><h3>Reading & Writing</h3><p>Improve comprehension, vocabulary, writing structure and everyday expression.</p><div class="course-meta"><span>Core skills</span><span>All levels</span></div></article>
+      </div>
+    </div></section>
+
+    <section class="feature-band" id="why-us"><div class="container">
+      <div class="section-head"><span class="kicker">THE MOLSOM EXPERIENCE</span><h2>Learning that works for real life</h2><p>Our approach puts learners, practice and progress at the centre.</p></div>
+      <div class="features">
+        <div class="feature"><div class="course-icon">🤝</div><h3>Supportive environment</h3><p>Learn in a welcoming space where questions and progress are encouraged.</p></div>
+        <div class="feature"><div class="course-icon">🧩</div><h3>Learn by doing</h3><p>Use activities, exercises and practical tasks to strengthen understanding.</p></div>
+        <div class="feature"><div class="course-icon">🚀</div><h3>Keep progressing</h3><p>Set goals, practise consistently and celebrate every improvement.</p></div>
+      </div>
+    </div></section>
+
+    <section><div class="container"><div class="cta"><div><h2>Ready to begin your learning journey?</h2><p>Tell us what you want to learn. We’ll help you find the right next step.</p></div><a class="btn" href="#contact">Start an enquiry ↗</a></div></div></section>
+
+    <section id="contact"><div class="container">
+      <div class="section-head"><span class="kicker">GET IN TOUCH</span><h2>We’d love to hear from you</h2><p>Ask about programs, admission, class schedules or learning support.</p></div>
+      <div class="contact-grid">
+        <div class="contact-info"><h3>Connect with Molsom</h3><p>Send an enquiry and our team can follow up with information about learning opportunities.</p><div class="contact-item">✉️ &nbsp; Email: <span>Update with your official email</span></div><div class="contact-item">📍 &nbsp; Location: <span>Update with your institution address</span></div><div class="contact-item">🕘 &nbsp; Office hours: <span>Update your working hours</span></div></div>
+        <form id="enquiryForm">
+          <div class="field"><label for="name">Full name *</label><input id="name" name="name" required placeholder="Your name"></div>
+          <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" required type="tel" placeholder="Your phone number"></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="program">Interested program</label><select id="program" name="program"><option value="">Select a program</option><option>Language Learning</option><option>Molsom Language & Culture</option><option>Digital Skills</option><option>Personal Development</option><option>Reading & Writing</option><option>Other</option></select></div>
+          <div class="field full"><label for="message">Your message</label><textarea id="message" name="message" placeholder="Tell us what you would like to learn..."></textarea></div>
+          <div class="field full"><button class="btn" type="submit">Prepare enquiry ↗</button><small style="color:var(--muted)">Demo form: this opens your email app. Add your official email address in the code before publishing.</small></div>
+        </form>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="container footer-row"><a class="brand" href="#home" style="color:#fff"><span class="logo">M</span><span>MOLSOM<small style="color:#9fb3c8">EDUCATIONAL INSTITUTION</small></span></a><small>© <span id="year"></span> Molsom Educational Institution. All rights reserved.</small><small>Learn • Grow • Lead</small></div></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Replace this with the institution's real contact email before publishing.
+    const INSTITUTION_EMAIL = 'your-email@example.com';
+    document.getElementById('enquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent('Molsom Educational Institution enquiry');
+      const body = encodeURIComponent(
+        `Name: ${data.get('name')}\\nPhone: ${data.get('phone')}\\nEmail: ${data.get('email')}\\nProgram: ${data.get('program')}\\n\\nMessage:\\n${data.get('message')}`
+      );
+      if (INSTITUTION_EMAIL === 'your-email@example.com') {
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Please update INSTITUTION_EMAIL in index.html with your official email before using the enquiry form.';
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 5000);
+        return;
+      }
+      window.location.href = `mailto:${INSTITUTION_EMAIL}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
